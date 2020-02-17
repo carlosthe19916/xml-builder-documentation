@@ -5,11 +5,13 @@ Las plantillas Openshift del proyecto se encuentran en `api/src/main/kubernetes/
 
 ## Desplegar XML Builder
 1. Clonar el repositorio:
+
 ```
 git clone https://github.com/project-openubl/xml-builder.git
 ```
 
 2. Mover tu terminal al proyecto descargado:
+
 ```
 cd xml-builder
 ```
@@ -24,6 +26,7 @@ Puedes encontrar más información en la documentación oficial: [CLI logging](h
 
 
 4. Crear un proyecto openshift:
+
 ```
 oc new-project project-openubl
 ```
@@ -46,14 +49,14 @@ Eso es todo, la aplicación deberá de estar desplegada en tu servidor:
 
 ## Parámetros disponibles en las plantillas
 
-1. Para XML Builder:
+-  **Para XML Builder**:
 
 | Parameter        | Default           | Possible values  |
 | ------------- |:-------------:| -----:|
 | XML_BUILDER_IMAGE_TAG      | latest | [tags](https://hub.docker.com/r/projectopenubl/xml-builder/tags) |
 
 
-2. Para XML Builder Signer:
+- **Para XML Builder Signer:**
 
 
 | Parameter        | Default           | Possible values  |

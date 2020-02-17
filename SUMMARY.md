@@ -10,3 +10,4 @@
 * [3. Desarrolladores](docs/DEVELOPERS.md)
 * [3.1. Compilación nativa](docs/NATIVE_COMPILATION.md)
 * [4. Para usuarios Windows](docs/WINDOWS.md)
+* [5. Openshift](docs/openshift/OPENSHIFT.md)

@@ -11,3 +11,4 @@
 * [3.1. Compilación nativa](docs/NATIVE_COMPILATION.md)
 * [4. Para usuarios Windows](docs/WINDOWS.md)
 * [5. Openshift](docs/openshift/OPENSHIFT.md)
+* [6. SUNAT](docs/sunat/GUIAS_Y_MANUALES.md)

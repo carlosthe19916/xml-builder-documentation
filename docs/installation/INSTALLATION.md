@@ -32,13 +32,14 @@ Eso es todo, podrás ver el servidor en http://localhost:8080
 
 ## Java
 Requisitos:
-1. Tener instalado Java
+
+- Tener instalado Java
 
 Pasos para levantar el servidor
-1. Descargar el servidor desde https://github.com/project-openubl/xml-builder/releases
-1. Descomprimir el archivo descargado en el paso anterior
-1. Abrir un terminal y ubicarse en la carpeta donde el servidor fue extraido
-1. Ejecutar el siguiente comando: 
+- Descargar el servidor desde https://github.com/project-openubl/xml-builder/releases
+- Descomprimir el archivo descargado en el paso anterior
+- Abrir un terminal y ubicarse en la carpeta donde el servidor fue extraido
+- Ejecutar el siguiente comando: 
 
 ```
 java -jar xml-builder-api-*-runner.jar
@@ -51,7 +52,8 @@ Eso es todo, podrás ver el servidor en http://localhost:8080
 
 ## Docker
 Requisitos:
-1. Tener instalado [Docker](https://www.docker.com/). Puedes utilizar la siguiente [guía de instalación](https://docs.docker.com/install/)
+
+- Tener instalado [Docker](https://www.docker.com/). Puedes utilizar la siguiente [guía de instalación](https://docs.docker.com/install/)
 
 ### Ejemplo PostgreSQL
 #### Crea un network
@@ -85,13 +87,14 @@ projectopenubl/xml-builder-signer
 
 ## Java
 Requisitos:
-1. Tener instalado Java
+
+- Tener instalado Java
 
 Pasos para levantar el servidor
-1. Descargar el servidor desde https://github.com/project-openubl/xml-builder-signer/releases
-1. Descomprimir el archivo descargado en el paso anterior
-1. Abrir un terminal y ubicarse en la carpeta donde el servidor fue extraido
-1. Ejecutar el siguiente comando: 
+- Descargar el servidor desde https://github.com/project-openubl/xml-builder-signer/releases
+- Descomprimir el archivo descargado en el paso anterior
+- Abrir un terminal y ubicarse en la carpeta donde el servidor fue extraido
+- Ejecutar el siguiente comando: 
 
 ```
 java -jar xml-builder-api-signer*-runner.jar

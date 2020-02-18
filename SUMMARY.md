@@ -4,6 +4,7 @@
 * [XML Builder](docs/xml-builder/XML_BUILDER.md)
 * [XML Builder Signer](docs/xml-builder-signer/XML_BUILDER_SIGNER.md)
 * [Instalación](docs/installation/INSTALLATION.md)
+* [Configuración](docs/configuration/CONFIGURATION.md)
 * [Crear comprobantes electrónicos](docs/comprobantes/CREAR_COMPROBANTE.md)
 * [Crear Comprobantes Gravados](docs/comprobantes/GRAVADO.md)
 * [Crear Comprobantes Exonerados](docs/comprobantes/EXONERADO.md)

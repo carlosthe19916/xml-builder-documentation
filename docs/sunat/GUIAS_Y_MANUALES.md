@@ -1,6 +1,6 @@
 # SUNAT
 
-![XML Builder Signer topology](images/sunat.png)
+![SUNAT](images/sunat.png)
 
 Puedes encontrar la documentación oficial en el siguiente link:
 

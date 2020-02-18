@@ -1,4 +1,4 @@
-# Comprobantes inafectos
+# Comprobantes gratuitos
 Deberás de usar el REST endpoint correspondiente dependiendo del comprobante que desees crear:
 
 - Boleta (`POST /api/documents/invoice/create`)
@@ -7,33 +7,16 @@ Deberás de usar el REST endpoint correspondiente dependiendo del comprobante qu
 - Nota de débito (`POST /api/documents/debit-note/create`)
 
 ## ¿Qué campo utilizar? 
-Se debe de utilizar el campo `detalle.tipoIGV`:
+Se debe de utilizar el campo `totalOtrosCargos`:
 
 ```json
 {
-  "detalle": [
-    {
-      "tipoIGV": "INAFECTO_OPERACION_ONEROSA"
-    }
-  ]
+  "totalOtrosCargos": 1
 }
 ```
 
-Los posibles valores de `tipoIGV` para operaciones inafectas son:
-
-| Valor                                 | Código |
-| ----------------------------------------- | --:|
-| INAFECTO_OPERACION_ONEROSA                | 30 |
-| INAFECTO_RETIRO_POR_BONIFICACION          | 31 |
-| INAFECTO_RETIRO                           | 32 |
-| INAFECTO_RETIRO_POR_MUESTRAS_MEDICAS      | 33 |
-| INAFECTO_RETIRO_POR_CONVENIO_COLECTIVO    | 34 |
-| INAFECTO_RETIRO_POR_PREMIO                | 35 |
-| INAFECTO_RETIRO_POR_PUBLICIDAD            | 36 |
-
-
 ## Ejemplo
-Factura inafectaÑ
+Factura con descuento global
 
 > API endpoint: POST /api/documents/invoice/create
 
@@ -41,6 +24,7 @@ Factura inafectaÑ
 {
   "serie": "F001",
   "numero": 1,
+  "totalOtrosCargos": 1,
   "proveedor": {
     "ruc": "12345678912",
     "razonSocial": "Project OpenUBL",
@@ -55,8 +39,7 @@ Factura inafectaÑ
     {
       "descripcion": "Nombre de producto o servicio",
       "precioUnitario": 1,
-      "cantidad": 1,
-      "tipoIGV": "INAFECTO_OPERACION_ONEROSA"
+      "cantidad": 1
     }
   ]
 }
@@ -87,8 +70,8 @@ XML resultado:
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
     <cbc:CustomizationID>2.0</cbc:CustomizationID>
     <cbc:ID>F001-1</cbc:ID>
-    <cbc:IssueDate>2020-02-17</cbc:IssueDate>
-    <cbc:IssueTime>16:21:19</cbc:IssueTime>
+    <cbc:IssueDate>2020-02-18</cbc:IssueDate>
+    <cbc:IssueTime>08:40:11</cbc:IssueTime>
     <cbc:InvoiceTypeCode listID="0101" listAgencyName="PE:SUNAT" listName="SUNAT:Identificador de Tipo de Documento" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01">01</cbc:InvoiceTypeCode>
     <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyName="United Nations Economic Commission for Europe" listName="Currency">PEN</cbc:DocumentCurrencyCode>
     <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -132,16 +115,16 @@ XML resultado:
         </cac:Party>
     </cac:AccountingCustomerParty>
     <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="PEN">0</cbc:TaxAmount>
+        <cbc:TaxAmount currencyID="PEN">0.15</cbc:TaxAmount>
         <cac:TaxSubtotal>
-            <cbc:TaxableAmount currencyID="PEN">1</cbc:TaxableAmount>
-            <cbc:TaxAmount currencyID="PEN">0</cbc:TaxAmount>
+            <cbc:TaxableAmount currencyID="PEN">0.85</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="PEN">0.15</cbc:TaxAmount>
             <cac:TaxCategory>
                 <cbc:ID schemeAgencyName="United Nations Economic Commission for Europe" schemeID="UN/ECE 5305" schemeName="Tax Category Identifie">S</cbc:ID>
                 <cac:TaxScheme>
-                    <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="UN/ECE 5153" schemeName="Codigo de tributos">9998</cbc:ID>
-                    <cbc:Name>INA</cbc:Name>
-                    <cbc:TaxTypeCode>FRE</cbc:TaxTypeCode>
+                    <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="UN/ECE 5153" schemeName="Codigo de tributos">1000</cbc:ID>
+                    <cbc:Name>IGV</cbc:Name>
+                    <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -150,13 +133,13 @@ XML resultado:
         
         
         <cbc:AllowanceTotalAmount currencyID="PEN">0</cbc:AllowanceTotalAmount>
-        <cbc:ChargeTotalAmount currencyID="PEN">0</cbc:ChargeTotalAmount>
-        <cbc:PayableAmount currencyID="PEN">1</cbc:PayableAmount>
+        <cbc:ChargeTotalAmount currencyID="PEN">1</cbc:ChargeTotalAmount>
+        <cbc:PayableAmount currencyID="PEN">2</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>
     <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
         <cbc:InvoicedQuantity unitCode="NIU" unitCodeListAgencyName="United Nations Economic Commission for Europe" unitCodeListID="UN/ECE rec 20">1</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="PEN">1</cbc:LineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="PEN">0.85</cbc:LineExtensionAmount>
         <cac:PricingReference>
             <cac:AlternativeConditionPrice>
                 <cbc:PriceAmount currencyID="PEN">1</cbc:PriceAmount>
@@ -164,18 +147,18 @@ XML resultado:
             </cac:AlternativeConditionPrice>
         </cac:PricingReference>
         <cac:TaxTotal>
-            <cbc:TaxAmount currencyID="PEN">0</cbc:TaxAmount>
+            <cbc:TaxAmount currencyID="PEN">0.15</cbc:TaxAmount>
             <cac:TaxSubtotal>
-                <cbc:TaxableAmount currencyID="PEN">1</cbc:TaxableAmount>
-                <cbc:TaxAmount currencyID="PEN">0</cbc:TaxAmount>
+                <cbc:TaxableAmount currencyID="PEN">0.85</cbc:TaxableAmount>
+                <cbc:TaxAmount currencyID="PEN">0.15</cbc:TaxAmount>
                 <cac:TaxCategory>
                     <cbc:ID schemeAgencyName="United Nations Economic Commission for Europe" schemeID="UN/ECE 5305" schemeName="Tax Category Identifier">S</cbc:ID>
-                    <cbc:Percent>0</cbc:Percent>
-                    <cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="SUNAT:Codigo de Tipo de Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">30</cbc:TaxExemptionReasonCode>
+                    <cbc:Percent>18</cbc:Percent>
+                    <cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="SUNAT:Codigo de Tipo de Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
                     <cac:TaxScheme>
-                        <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="UN/ECE 5153" schemeName="Codigo de tributos">9998</cbc:ID>
-                        <cbc:Name>INA</cbc:Name>
-                        <cbc:TaxTypeCode>FRE</cbc:TaxTypeCode>
+                        <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="UN/ECE 5153" schemeName="Codigo de tributos">1000</cbc:ID>
+                        <cbc:Name>IGV</cbc:Name>
+                        <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
                     </cac:TaxScheme>
                 </cac:TaxCategory>
             </cac:TaxSubtotal>
@@ -184,7 +167,7 @@ XML resultado:
             <cbc:Description><![CDATA[Nombre de producto o servicio]]></cbc:Description>
         </cac:Item>
         <cac:Price>
-            <cbc:PriceAmount currencyID="PEN">1</cbc:PriceAmount>
+            <cbc:PriceAmount currencyID="PEN">0.85</cbc:PriceAmount>
         </cac:Price>
     </cac:InvoiceLine>
 </Invoice>

@@ -1,12 +1,13 @@
 # Comprobantes gratuitos
-Los comprobantes que pueden ser inafectos son:
+Deberás de usar el REST endpoint correspondiente dependiendo del comprobante que desees crear:
 
-- Boleta
-- Factura
-- Nota de crédito
-- Nota de débito
+- Boleta (`POST /api/documents/invoice/create`)
+- Factura (`POST /api/documents/invoice/create`)
+- Nota de crédito (`POST /api/documents/credit-note/create`)
+- Nota de débito (`POST /api/documents/debit-note/create`)
 
-Para crear un comprobante que contenga productos o servicios INAFECTOS sólo necesitas especificar el valor de `tipoIGV`:
+## ¿Qué campo utilizar? 
+Se debe de utilizar el campo `detalle.tipoIGV`:
 
 ```json
 {
@@ -39,7 +40,7 @@ Los posibles valores de `tipoIGV` para una operación gratuita son:
 
 
 ## Ejemplo
-El siguiente ejemplo se crea una factura GRATUITA. Deberás de utilizar el endpoint para crear facturas; si deseas crear notas de crédito, o notas de débito entonces deberás de utilizar un endpoint diferente.
+Factura gratuita:
 
 > API endpoint: POST /api/documents/invoice/create
 
@@ -68,7 +69,7 @@ El siguiente ejemplo se crea una factura GRATUITA. Deberás de utilizar el endpo
 }
 ```
 
-El JSON anterior deberá de generar el siguiente XML:
+XML resultado:
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>

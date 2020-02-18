@@ -1,12 +1,13 @@
 # Comprobantes exonerados
-Los comprobantes que pueden ser exonerados son:
+Deberás de usar el REST endpoint correspondiente dependiendo del comprobante que desees crear:
 
-- Boleta
-- Factura
-- Nota de crédito
-- Nota de débito
+- Boleta (`POST /api/documents/invoice/create`)
+- Factura (`POST /api/documents/invoice/create`)
+- Nota de crédito (`POST /api/documents/credit-note/create`)
+- Nota de débito (`POST /api/documents/debit-note/create`)
 
-Para crear un comprobante que contenga productos o servicios EXONERADOS sólo necesitas especificar el valor de `tipoIGV`:
+## ¿Qué campo utilizar? 
+Se debe de utilizar el campo `detalle.tipoIGV`:
 
 ```json
 {
@@ -26,7 +27,7 @@ Los posibles valores de `tipoIGV` para operaciones exoneradas son:
 | EXONERADO_TRANSFERENCIA_GRATUITA          | 21 |
 
 ## Ejemplo
-El siguiente ejemplo crea una factura EXONERADA. Deberás de utilizar el endpoint para crear facturas; si deseas crear notas de crédito, o notas de débito entonces deberás de utilizar un endpoint diferente.
+Factura que contiene un producto/servicio exonerado.
 
 > API endpoint: POST /api/documents/invoice/create
 
@@ -55,7 +56,7 @@ El siguiente ejemplo crea una factura EXONERADA. Deberás de utilizar el endpoin
 }
 ```
 
-El JSON anterior deberá de generar el siguiente XML:
+XML resultado:
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>

@@ -10,26 +10,29 @@ Pre requisitos:
 # Levantar el Backend
 Para levantar el backend en modo desarrollo necesitas:
 
-1. Hacer un fork al projecto https://github.com/project-openubl/xml-builder
+- Hacer un fork al projecto https://github.com/project-openubl/xml-builder
 
-2. clonar el project que acabas de hacer fork:
+- clonar el project que acabas de hacer fork:
+
 ```
 git clone https://github.com/carlosthe19916/xml-builder.git 
 ```
 
-recuerda cambiar `carlosthe19916` por el usuario con el que hiciste Fork en el paso anterior
+Recuerda cambiar `carlosthe19916` por el usuario con el que hiciste Fork en el paso anterior
 
-3. Ubicarte en la carpeta que acabas de descargar
+- Ubicarte en la carpeta que acabas de descargar
+
 ```
 cd xml-builder
 ```
 
-3. Descargar dependencias
+- Descargar dependencias
+
 ```
 ./mvnw install -DskipTests
 ```
 
-4. Arrancar servidor:
+- Arrancar servidor:
 
 ```
 ./mvnw clean compile quarkus:dev -f api/ -DnoDeps
@@ -46,9 +49,10 @@ Eso es todo. Podrás ver el servidor corriendo en http://localhost:8080/
 
 # Levantar el Frontend
 
-1. Hacer un fork al projecto https://github.com/project-openubl/xml-builder-ui o https://github.com/project-openubl/xml-builder-ee-ui
+- Hacer un fork al projecto https://github.com/project-openubl/xml-builder-ui o https://github.com/project-openubl/xml-builder-ee-ui
 
-2. clonar el project que acabas de hacer fork:
+- clonar el project que acabas de hacer fork:
+
 ```
 git clone https://github.com/project-openubl/xml-builder-ui.git
 ```
@@ -62,6 +66,7 @@ git clone https://github.com/project-openubl/xml-builder-ee-ui.git
 recuerda cambiar `carlosthe19916` por el usuario con el que hiciste Fork en el paso anterior.
 
 3. Ubicarte en la carpeta que acabas de descargar
+
 ```
 cd xml-builder-ui
 ```
@@ -79,6 +84,7 @@ yarn install
 ```
 
 5. Iniciar el servidor
+
 ```
 yarn start
 ```

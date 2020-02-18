@@ -4,19 +4,19 @@ XML Builder puede ser desplegado fácilmente en [Kubernetes](https://kubernetes.
 Las plantillas Openshift del proyecto se encuentran en `api/src/main/kubernetes/openshift.yml` y `api-signer/src/main/kubernetes/openshift.yml`. Para conocer un poco más sobre plantillas Openshift puedes leer la documentación oficial [acá](https://docs.openshift.com/container-platform/4.3/openshift_images/using-templates.html).
 
 ## Desplegar XML Builder
-1. Clonar el repositorio:
+- Clonar el repositorio:
 
 ```
 git clone https://github.com/project-openubl/xml-builder.git
 ```
 
-2. Mover tu terminal al proyecto descargado:
+- Mover tu terminal al proyecto descargado:
 
 ```
 cd xml-builder
 ```
 
-3. Openshift CLI login:
+- Openshift CLI login:
 
 ```
 oc login --server=https://miservidor
@@ -25,13 +25,13 @@ oc login --server=https://miservidor
 Puedes encontrar más información en la documentación oficial: [CLI logging](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html#cli-logging-in_cli-developer-commands).
 
 
-4. Crear un proyecto openshift:
+- Crear un proyecto openshift:
 
 ```
 oc new-project project-openubl
 ```
 
-5. Deplegar la aplicación usando plantillas:
+- Deplegar la aplicación usando plantillas:
 
 Para XML Builder:
 ```

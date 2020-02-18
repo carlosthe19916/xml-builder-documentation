@@ -28,7 +28,7 @@ Pre requisitos:
 - GraalVM
 - Java
 
-[GraalVM](https://www.graalvm.org/) es usado para generar ejecutables Java ultrarápidos y que consumen muy poca memora,
+[GraalVM](https://www.graalvm.org/) es usado para generar ejecutables Java ultra rápidos y que consumen muy poca memora,
  (comparada con la memoria consumida por una aplicación Java estándard). Si deseas aprender
  más sobre GraalVM puedes leer [GraalVM Documentation](https://www.graalvm.org/docs/)
 
@@ -37,12 +37,10 @@ que a su vez utiliza GraalVM por detráz. Si deseas aprender cómo crear ejecuta
 puedes leer [Quarkus - Building native image](https://quarkus.io/guides/building-native-image)
 
 Si deseas generar tus artefactos para tu Sistema Operativo debes de ejecutar:
-```
-./mvnw -f api/pom.xml clean install -DskipTests
-```
+
 
 ```
-./mvnw -f api/pom.xml clean package -Pnative -DskipTests
+./mvnw clean package -Pnative -Pui -DskipTests
 ```
 
 El proceso puede tardar mucho tiempo. Empieza la compilacion y ve por un café.
@@ -51,7 +49,8 @@ Cuando la compilación nativa finalize, podrás ver el artefacto nativo:
 ![Jar](images/native_compilation.png)
 
 El comando para ejecutar el artefacto nativo puede variar dependiendo de tu sistema operativo.
-En este ejemplo usé Fedora para crear el artecto y puede ser ejecutar con el comando:
+
+En este ejemplo usé Fedora para crear el artecto; el artefacto puede ser ejecutado con el comando:
 
 ```
 ./api/target/xml-builder-api-${version}-runner

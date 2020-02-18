@@ -1,11 +1,21 @@
 # Crear Comprobante Electrónico
-## Requisitos
-- Tener el servidor XML Builder levantado. Puedes leer [Levantar servidor](XB_INSTALAR_CONFIGURAR.md) para aprender cómo.
+Requisitos:
+- Tener el servidor XML Builder levantado. Puedes leer [Instalación](../installation/INSTALLATION.md) para aprender cómo.
 
-**XML Builder** está hecho para recibir peticiones HTTP por lo que podemos utilizar varios métodos para consumir sus servicios.
-Veamos algunos de ellos
+**XML Builder** y **XML Builder Signer** están hechos para procesar peticiones HTTP por lo que podemos utilizar varios métodos para consumir sus servicios.
 
-## 1. Utilizando el comando CURL en el terminal
+
+## XML Builder API
+Para conocer sobre los parámetros y REST endpoint requeridos visite:
+- [XML Builder API](https://app.swaggerhub.com/apis-docs/project-openubl/xml-builder)
+
+
+## XML Builder Signer API
+Para conocer sobre los parámetros y REST endpoint requeridos visite:
+- [XML Builder Signer API](https://app.swaggerhub.com/apis-docs/project-openubl/xml-builder-signer)
+
+
+# Crear comprobante utilizando el comando CURL en el terminal
 > Si tienes windows puedes descargar CURL utilizando el siguiente enlace: https://curl.haxx.se/windows/
 
 **El siguiente ejemplo creará una Factura Electrónica.**
@@ -53,7 +63,7 @@ El ejemplo anterior creará un comprobante con los datos mínimos. **XML Builder
 ![terminal](images/curl.gif)
 
 
-## 2. Utilizando [Postman](https://www.getpostman.com/)
+# Crear comprobante utilizando [Postman](https://www.getpostman.com/)
 **El siguiente ejemplo creará una Factura Electrónica.**
 
 - Instale Postman
@@ -97,5 +107,16 @@ Deberá utilizar el siguiente body:
 
 Por último deberá hacer clic en el boton SEND.
 
-## API
-Para conocer un poco más acerca del JSON que se envía a **XML Builder** vea la [documentación del API](https://app.swaggerhub.com/apis-docs/project-openubl/xml-builder)
+
+# Crear comprobante desde tu aplicación
+**XML Builder** y **XML Builder Signer** son capaces de procesar peticiones REST.
+
+- GET
+- POST
+- PUT
+- DELETE
+
+Para aprender cómo interactuar con los REST endpoints lea la documentación:
+
+- [XML Builder API](https://app.swaggerhub.com/apis-docs/project-openubl/xml-builder)
+- [XML Builder Signer API](https://app.swaggerhub.com/apis-docs/project-openubl/xml-builder-signer)

@@ -10,6 +10,7 @@
 * [Crear Comprobantes Exonerados](docs/comprobantes/EXONERADO.md)
 * [Crear Comprobantes Inafectos](docs/comprobantes/INAFECTO.md)
 * [Crear Comprobantes Gratuitos](docs/comprobantes/GRATUITA.md)
+* [Crear Baja](docs/comprobantes/BAJA.md)
 * [SUNAT](docs/sunat/GUIAS_Y_MANUALES.md)
 * [Desarrolladores](docs/developers/DEVELOPERS.md)
 * [Quarkus](docs/quarkus/QUARKUS.md)

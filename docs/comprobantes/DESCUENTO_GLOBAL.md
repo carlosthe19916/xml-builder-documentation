@@ -1,10 +1,20 @@
 # Descuentos globales
-Deberás de usar el REST endpoint correspondiente dependiendo del comprobante que desees crear:
+Deberás de usar el REST endpoint correspondiente dependiendo del servidor que utilizas (XML Builder o XML Builder Signer) y dependiendo del comprobante que desees crear.
 
-- Boleta (`POST /api/documents/invoice/create`)
-- Factura (`POST /api/documents/invoice/create`)
-- Nota de crédito (`POST /api/documents/credit-note/create`)
-- Nota de débito (`POST /api/documents/debit-note/create`)
+## XML Builder endpoints
+| METHOD    | ENDPOINT                          |
+| --------- | ----------------------------------|
+| POST      | /api/documents/invoice/create     |
+| POST      | /api/documents/credit-note/create     |
+| POST      | /api/documents/debit-note/create     |
+
+## XML Builder Signer endpoints
+
+| METHOD    | ENDPOINT                                                          |
+| --------- | ------------------------------------------------------------------|
+| POST      | /api/organizations/{organizationId}/documents/invoice/create      |
+| POST      | /api/organizations/{organizationId}/documents/credit-note/create  |
+| POST      | /api/organizations/{organizationId}/documents/debit-note/create   |
 
 ## ¿Qué campo utilizar? 
 Se debe de utilizar el campo `totalDescuentos`:
@@ -17,8 +27,6 @@ Se debe de utilizar el campo `totalDescuentos`:
 
 ## Ejemplo
 Factura con descuento global:
-
-> API endpoint: POST /api/documents/invoice/create
 
 ```json
 {

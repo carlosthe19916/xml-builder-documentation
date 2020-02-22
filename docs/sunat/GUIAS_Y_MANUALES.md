@@ -9,6 +9,16 @@ Revisa y lee la documentación oficial sobre facturación electrónica:
 
 - [Guías y manuales](http://orientacion.sunat.gob.pe/index.php/empresas-menu/comprobantes-de-pago-empresas/comprobantes-de-pago-electronicos-empresas/see-operador-de-servicios-electronicos/7065-guias-y-manuales)
 
+### Percepcion y Retencion
+- [Manual percepcion](http://contenido.app.sunat.gob.pe/insc/ComprobantesDePago+Electronicos/Guia_XML_Comprobante_Percepcion_v1.0.pdf)
+- [Manual retención](http://contenido.app.sunat.gob.pe/insc/ComprobantesDePago+Electronicos/Guia_XML_Comprobante_Retencion_v1.0.pdf)
+
+### Guía de remisión
+- [Manual](http://contenido.app.sunat.gob.pe/insc/ComprobantesDePago+Electronicos/Guia_GUIA_REMISION_REMITENTE.pdf)
+
+### Catálogos
+- [Catálogos](http://www.sunat.gob.pe/legislacion/superin/2017/anexoVII-117-2017.pdf)
+
 ## Consulta de Validez del Comprobante de Pago Electrónico
 Verifique que su comprobante electrónico está registrado correctamente en los sistemas de la SUNAT:
 
